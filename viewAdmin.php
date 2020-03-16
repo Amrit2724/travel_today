@@ -41,8 +41,8 @@ include "adminheader.php";
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['type']; ?></td>
-                <td><a href="editAdmin.php?q=<?php echo $row['email'] ?>"><!--<i class="fa fa-edit"></i>-->Edit</a> </td>
-                <td><a href="deleteAdmin.php?q=<?php echo $row['email'] ?>"><!--<i class="fa fa-edit"></i>-->Delete</a> </td>
+                <td><a href="editAdmin.php?q=<?php echo $row['email'] ?>"></a> </td>
+                <td><a onclick='return confirm("are you sure to delete?")' href="deleteAdmin.php?q=<?php echo $row['email']?>"<!--<i class="fa fa-edit"></i>-->Delete</a> </td>
             </tr>
             <?php
         }

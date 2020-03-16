@@ -14,6 +14,7 @@
 
 
             <li class="nav-item"><a class="nav-link" href="user.php">User Sign</a></li>
+            <li class="nav-item"><a class="nav-link" href="userLogin.php">User Login</a></li>
             <li class="nav-item"><a class="nav-link" href="adminLogin.php">Login</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
         </ul>

@@ -11,8 +11,8 @@ $result = mysqli_query($conn, $s);
 if (mysqli_num_rows($result) > 0) {
     header("Location:user.php?er=0");
 } else {
-    $sql = "INSERT INTO `user`(`email`, `password`, `name`, `type`) 
-VALUES ('$email','$password','$mobile','$fullname')";
+    $sql = "INSERT INTO `user`(`email`, `password`, `mobile`, `fullname`) VALUES 
+('$email','$password','$mobile','$fullname')";
     mysqli_query($conn, $sql);
     header("Location:user.php?er=1");
 }

@@ -7,61 +7,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <?php
-    include_once "headerfiles.php"
+    include_once "headerfiles.php";
     ?>
 </head>
 <body>
 <?php
-include "publicheader.php";
+include_once "userheader.php";
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-center">Sign up</h1>
+            <h1 class="text-center">Change Password</h1>
         </div>
     </div>
-    <form action="adduser.php" method="post">
+    <form action="changeUserPasswordAction.php" method="post">
         <div class="form-group row">
             <label for="username" class="col-md-2">Email</label>
             <div class="col-md-10">
                 <input type="text" name="email" class="form-control" data-rule-required="true" data-rule-email="true"
-                       id="username"
+                       id="username" readonly value="<?php echo $email; ?>"
                        placeholder="email">
             </div>
         </div>
+
         <div class="form-group row">
-            <label for="username" class="col-md-2">Password</label>
+            <label for="username" class="col-md-2">Old Password</label>
             <div class="col-md-10">
-                <input type="password" name="password" class="form-control" data-rule-required="true" id="password"
-                       placeholder="password">
+                <input type="password" name="oldpassword" class="form-control" data-rule-required="true"
+                       id="oldpassword"
+                       placeholder="enter your old password">
             </div>
         </div>
 
+
         <div class="form-group row">
-            <label for="username" class="col-md-2"> confirm Password</label>
+            <label for="username" class="col-md-2">New Password</label>
             <div class="col-md-10">
-                <input type="password" name="confirmPassword" class="form-control" data-rule-required="true"
-                       id="confirm password" data-rule-equalTo="#password"
-                       placeholder=" confirm password">
+                <input type="password" name="newpassword" class="form-control" data-rule-required="true"
+                       id="newpassword"
+                       placeholder="new password">
             </div>
         </div>
 
+
         <div class="form-group row">
-            <label for="username" class="col-md-2">mobile</label>
+            <label for="username" class="col-md-2">Confirm Password</label>
             <div class="col-md-10">
-                <input type="text" name="mobile" class="form-control" data-rule-required="true" data-rule-number="true"
-                       data-rule-maxlength="10" data-rule-minlength="10" id="mobile"
-                       placeholder="mobile">
+                <input type="password" name="confirmpassword" class="form-control" data-rule-required="true"
+                       id="confirmpassword"
+                       placeholder="confirm your password" data-rule-equalTo="#newpassword">
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="username" class="col-md-2">full name</label>
-            <div class="col-md-10">
-                <input type="text" name="fullname" class="form-control" data-rule-required="true" id="full name"
-                       placeholder="full name">
-            </div>
-        </div>
         <div class="form-group row">
             <label for="username" class="col-md-2"></label>
             <div class="col-md-10">
@@ -76,13 +73,15 @@ include "publicheader.php";
                     $val = $_REQUEST['er'];
                     if ($val == 0) {
                         ?>
-                        <div class="alert alert-danger"><b>Fail! </b> Email already Exist
+                        <div class="alert alert-success">
+                            <b>Success !</b> Password changed Successfully
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
                         </div>
                         <?php
                     } elseif ($val == 1) {
                         ?>
-                        <div class="alert alert-success"><b>Success! </b> You have Sign up Successfully
+                        <div class="alert alert-danger">
+                            <b>Fail !</b> Invalid Credentials
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
                         </div>
                         <?php
@@ -92,7 +91,6 @@ include "publicheader.php";
             </div>
         </div>
     </form>
-
-
+</div>
 </body>
 </html><?php

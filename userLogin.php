@@ -62,11 +62,14 @@ include_once "publicheader.php";
                 } elseif ($val == 1) {
                     ?>
                     <div class="alert alert-success"><b>Success! </b> User added Successfully
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <button type="button" class="close" data-dismiss="alert">&times;
                     </div>
                     <?php
                 }
             }
             ?>
         </div>
-    </div><?php
+    </div>
+</div>
+</body>
+</html>
